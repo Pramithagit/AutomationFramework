@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name=" NewAutomation Test Suite">
+    <listeners>
+        <listener class-name="ExtentReportListener.Listeners"/>
+    </listeners>
+
+    <test  name=" Regression TestCases">
+        <classes>
+            <class name="PageTestPackage.HomePageTest"/>
+            <class name="PageTestPackage.LoginPageTest"/>
+            <class name="PageTestPackage.LandingPageTest"/>
+
+        </classes>
+    </test>
+</suite>

@@ -1,0 +1,4 @@
+[[32mINFO [m] 2022-12-15 23:46:28,937 Listeners.onTestSuccess() - Successfully passed testcase:TestTitle
+[[32mINFO [m] 2022-12-15 23:46:32,271 Listeners.onTestSuccess() - Successfully passed testcase:VerifywblLogoTest
+[[32mINFO [m] 2022-12-15 23:46:36,084 Listeners.onTestSuccess() - Successfully passed testcase:VerifystudentTest
+[[32mINFO [m] 2022-12-15 23:46:40,360 Listeners.onTestSuccess() - Successfully passed testcase:TestLoginBtn
