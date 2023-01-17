@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
-public class BaseClass {
+public class BasePageTest {
     public static WebDriver driver;
     public static Properties prop;
 
@@ -22,7 +22,7 @@ public class BaseClass {
     public static WebEventListener eventListener;
 
 
-    public BaseClass(){
+    public BasePageTest(){
         try {
             prop = new Properties();
             FileInputStream in = new FileInputStream(

@@ -1,5 +1,6 @@
 package UtilsPackage;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.apache.poi.xssf.usermodel.XSSFRow;
@@ -7,15 +8,19 @@ import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.io.FileHandler;
 
 import java.io.File;
 import java.io.IOException;
 
-import static com.BaseClassPackage.BaseClass.driver;
 
-public class Utils {
-    public Utils() {
+
+
+public class Utils   {
+    private static WebDriver webDriver;
+
+    public Utils() throws IOException {
         super();
     }
     private static Logger Log = LogManager.getLogger(Utils.class);
@@ -55,9 +60,17 @@ public class Utils {
         return data;
     }
 
+    public static void setWebDriver(WebDriver driver) {
+        webDriver = driver;
+    }
+
     public static void takeScreenshotAtEndOfTest() throws IOException {
-        File srcFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);   //take screenshot and store it in a file
-        String currentDir = System.getProperty("/Users/deepa/Documents/prep/java/TestNG/NewAutomation/ScreenShots");    //give the location where we have to save the screenshot taken
+        WebDriverManager.chromedriver().setup();
+        File srcFile = ((TakesScreenshot) webDriver).getScreenshotAs(OutputType.FILE);   //take screenshot and store it in a file
+        //File srcFile = ((TakesScreenshot) new ChromeDriver()).getScreenshotAs(OutputType.FILE);   //take screenshot and store it in a file
+
+        String currentDir = System.getProperty("user.dir");
+        //String currentDir = "/Users/deepa/Documents/prep/java/TestNG/NewAutomation/ScreenShots");    //give the location where we have to save the screenshot taken
         FileHandler.copy(srcFile, new File(currentDir + "/screenshots/" + System.currentTimeMillis() + ".png"));   //finally copy the screenshot taken to the location
 
     }

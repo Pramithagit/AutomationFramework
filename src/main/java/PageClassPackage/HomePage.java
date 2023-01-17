@@ -1,11 +1,11 @@
 package PageClassPackage;
 
-import com.BaseClassPackage.BaseClass;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class HomePage extends BaseClass {
+public class HomePage {
 
     @FindBy(xpath="//*[@id=\"logo\"]")
     WebElement wbqa;
@@ -16,7 +16,10 @@ public class HomePage extends BaseClass {
     @FindBy(xpath="//*[@id=\"loginButton\"]")
     WebElement loginBtn;
 
-    public HomePage(){
+    WebDriver driver;
+
+    public HomePage(WebDriver driver){
+        this.driver = driver;
         PageFactory.initElements(driver,this);
     }
 
@@ -36,7 +39,7 @@ public class HomePage extends BaseClass {
     }
     public LoginPage VerifyLoginBtn(){
         loginBtn.click();
-        return new LoginPage();
+        return new LoginPage(driver);
 
     }
 

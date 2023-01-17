@@ -1,7 +1,6 @@
 package ExtentReportListener;
 
 import UtilsPackage.Utils;
-import com.BaseClassPackage.BaseClass;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
@@ -14,12 +13,12 @@ import org.testng.ITestResult;
 import java.io.IOException;
 
 
-    public class Listeners extends BaseClass implements ITestListener {
+    public class Listeners implements ITestListener {
 
         public Listeners() throws IOException {
             super();
         }
-        ExtentReports extent = ExtentReportNG.getReportObject();
+        ExtentReports extent = ExtentReporterNG.getReportObject();
         ExtentTest test;
         public static Logger Log = LogManager.getLogger(Listeners.class);
 

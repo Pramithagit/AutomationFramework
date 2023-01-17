@@ -1,11 +1,11 @@
 package PageClassPackage;
 
-import com.BaseClassPackage.BaseClass;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class LoginPage extends BaseClass {
+public class LoginPage {
 
     @FindBy(xpath="//*[@id=\"username\"]")
     WebElement username;
@@ -16,7 +16,10 @@ public class LoginPage extends BaseClass {
     @FindBy(xpath="//*[@id=\"register\"]")
     WebElement register;
 
-    public LoginPage() {
+    WebDriver driver;
+
+    public LoginPage(WebDriver driver) {
+        this.driver = driver;
         PageFactory.initElements(driver, this);
 
     }
@@ -35,7 +38,7 @@ public class LoginPage extends BaseClass {
         username.sendKeys(un);
         password.sendKeys(pwd);
         loginBtn.click();
-        return new LandingPage();
+        return new LandingPage(driver);
 
     }
 }

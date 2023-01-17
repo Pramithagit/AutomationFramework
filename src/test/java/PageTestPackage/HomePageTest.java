@@ -1,16 +1,15 @@
 package PageTestPackage;
 
 import PageClassPackage.HomePage;
-import PageClassPackage.LoginPage;
-import com.BaseClassPackage.BaseClass;
+import com.BaseClassPackage.BasePageTest;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+import UtilsPackage.Utils;
 
-public class HomePageTest extends BaseClass {
+public class HomePageTest extends BasePageTest {
     HomePage home;
-    LoginPage login;
 
     public HomePageTest(){
         super();
@@ -18,31 +17,33 @@ public class HomePageTest extends BaseClass {
     @BeforeMethod
     public void setup(){
         initialization();
-        home=new HomePage();
+        Utils.setWebDriver(driver);
+        home=new HomePage(driver);
     }
-    @Test(priority=1)
+    @Test()
     public void TestTitle(){
         String actual =home.VerifyTitle();
         String expected ="QA/QE/SDET Training.";
         Assert.assertEquals(expected,actual);
     }
-    @Test(priority =2)
+    @Test()
     public void VerifywblLogoTest(){
         boolean logo=home.verifywbllogo();
         Assert.assertTrue(logo);
     }
-    @Test(priority = 3)
+    @Test()
     public void VerifystudentTest(){
         boolean student = home.verifystudent();
         Assert.assertTrue(student);
     }
-    @Test(priority = 4)
+    @Test()
     public void TestLoginBtn(){
         home.VerifyLoginBtn();
     }
 
     @AfterMethod
     public void TearDown(){
+
         driver.quit();
     }
 }

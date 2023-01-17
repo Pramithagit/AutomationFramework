@@ -1,0 +1,8 @@
+[[32mINFO [m] 2023-01-13 08:00:45,930 Listeners.onTestSuccess() - Successfully passed testcase:TestTitle
+[[32mINFO [m] 2023-01-13 08:00:49,490 Listeners.onTestSuccess() - Successfully passed testcase:VerifywblLogoTest
+[[32mINFO [m] 2023-01-13 08:00:52,933 Listeners.onTestSuccess() - Successfully passed testcase:VerifystudentTest
+[[32mINFO [m] 2023-01-13 08:00:57,004 Listeners.onTestSuccess() - Successfully passed testcase:TestLoginBtn
+[[32mINFO [m] 2023-01-13 08:01:00,875 Listeners.onTestSuccess() - Successfully passed testcase:Validatelogintitletest
+[[32mINFO [m] 2023-01-13 08:01:04,996 Listeners.onTestSuccess() - Successfully passed testcase:logintest
+[[32mINFO [m] 2023-01-13 08:01:09,002 Listeners.onTestSuccess() - Successfully passed testcase:TestWBL
+[[32mINFO [m] 2023-01-13 08:01:13,098 Listeners.onTestSuccess() - Successfully passed testcase:Testmailid
